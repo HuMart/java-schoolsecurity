@@ -1,0 +1,29 @@
+***GET TOKEN FROM THE SERVER***
+curl -X POST --user "lambda-client:lambda-secret" -d "grant_type=password&username=admin&password=password" https://humart-schooldeploy.herokuapp.com/oauth/token
+
+***STUDENTS/STUDENTS***
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer 461b470e-0981-49cf-b4f6-e757b927bd12" http://humart-schooldeploy.herokuapp.com/students/students
+
+***STUDENTS/STUDENT/{STUDENTID}***
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer 461b470e-0981-49cf-b4f6-e757b927bd12" http://humart-schooldeploy.herokuapp.com/students/Student/1
+
+**STUDENTS/STUDENT/NAMELIKE/{NAME}***
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer 461b470e-0981-49cf-b4f6-e757b927bd12" https://humart-schooldeploy.herokuapp.com/students/student/namelike/jo
+
+***STUDENTS/STUDENT***
+curl -X POST -H "Accept: application/json" -H "Authorization: Bearer 461b470e-0981-49cf-b4f6-e757b927bd12" -d "{ \"studname\":\"name\"l}" http://humart-schooldeploy.herokuapp.com/students/student
+
+***ADD***STUDENTS/STUDENT/{STUDENTID}***
+curl -X PUT -H "Content-Type: application/json" -d "{\"studname\":\"Paul\"}" -H "Authorization: Bearer 461b470e-0981-49cf-b4f6-e757b927bd12" http://humart-schooldeploy.herokuapp.com/students/Student/3
+
+***DELETE***STUDENTS/STUDENT/{STUDENTID}***
+curl -X DELETE -H "Accept: application/json" -H "Authorization: Bearer 461b470e-0981-49cf-b4f6-e757b927bd12" http://humart-schooldeploy.herokuapp.com/students/student/{2}
+
+***COURSES/COURSES***
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer 461b470e-0981-49cf-b4f6-e757b927bd12" http://humart-schooldeploy.herokuapp.com/courses/courses
+
+***COURSES/STUDCOUNT***
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer 461b470e-0981-49cf-b4f6-e757b927bd12" http://humart-schooldeploy.herokuapp.com/courses/studcount
+
+***COURSES/COURSES/{COURSEID}***
+curl -X DELETE -H "Accept: application/json" -H "Authorization: Bearer 461b470e-0981-49cf-b4f6-e757b927bd12" http://humart-schooldeploy.herokuapp.com/courses/courses/{2}
